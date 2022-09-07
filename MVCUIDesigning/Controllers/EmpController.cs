@@ -19,23 +19,28 @@ namespace MVCUIDesigning.Controllers
         {
                 return RedirectToAction("AddEmp2", Emp);
         }
-        public ViewResult AddEmp2(Employee Emp)
-        {
-            return View("EmpDisplay2", Emp);
-        }
-        public ViewResult CookiesTest1(int? Id,string Name,double? Price)
-        {
-            HttpCookie Cookie = new HttpCookie("ProductCookie");
-            Cookie["Id"] = Id.ToString();
-            Cookie["Name"] = Name;
-            Cookie["Price"] = Price.ToString();
-            Cookie.Expires = DateTime.Now.AddDays(3);
-            Response.Cookies.Add(Cookie);
-            return View();
-        }
-        public ViewResult CookiesTest2() 
-        {
-            return View();
-        }
+        
+
+        //public ViewResult AddEmp2(Employee Emp)
+        //{
+        //    return View("EmpDisplay2", Emp);
+        //}
+        
+        // Maintaining the state or Passing data from action method to view using Cookies
+
+        //public ViewResult CookiesTest1(int? Id,string Name,double? Price)
+        //{
+        //    HttpCookie Cookie = new HttpCookie("ProductCookie");
+        //    Cookie["Id"] = Id.ToString();
+        //    Cookie["Name"] = Name;
+        //    Cookie["Price"] = Price.ToString();
+        //    Cookie.Expires = DateTime.Now.AddDays(3);
+        //    Response.Cookies.Add(Cookie);
+        //    return View();
+        //}
+        //public ViewResult CookiesTest2() 
+        //{
+        //    return View();
+        //}
     }
 }

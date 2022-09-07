@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Validate","Account"))
+        {
+            @Html.Label("lblName", "User Name", new {@class= "text-success" })<br />;
+            @Html.TextBox("txtName");<br />
+            @Html.Label("lblPassword", "Password", new { @class = "text-success" })<br />;
+            @Html.Password("Password");<br/>;
+            <input type="submit" class="btn btn-outline-success"/>
+            <input type="reset" class="btn btn-outline-success"/>
+        }
+    </div>
+</body>
+</html>
