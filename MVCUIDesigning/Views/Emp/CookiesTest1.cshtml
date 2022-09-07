@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CookiesTest1</title>
+</head>
+<body>
+    <div>
+        @{
+            HttpCookie Cookie = Request.Cookies["ProductCookie"];
+            int Id = int.Parse(Cookie["Id"]);
+            string Name = Cookie["Name"];
+            double Price = double.Parse(Cookie["Price"]);
+        }
+        <table border="1" align="center" width="20%">
+            <caption>Product Details</caption>
+            <tr><td>Id:</td><td>@Id</td></tr>
+            <tr><td>Name:</td><td>@Name</td></tr>
+            <tr>
+                <td>Price:</td>
+                <td>
+                    @{
+                        Price = Price + Price * 10 / 100;
+                        @Price
+                    }
+                </td>
+            </tr>
+        </table>
+        <center>Click to launch new <a href="/Emp/CookiesTest2">Page</a>.</center>
+    </div>
+</body>
+</html>
